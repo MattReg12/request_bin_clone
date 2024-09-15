@@ -1,0 +1,55 @@
+.main {
+  height: 50px;
+  background-color: #f1f5f8;
+  padding-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
+
+.defaultButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 40px;
+  color: white;
+  background-color: #343b56;
+  padding-right: 3px;
+  padding-left: 3px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.otherButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 40px;
+  color: white;
+  background-color: #343b56;
+  padding-right: 3px;
+  padding-left: 3px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+
+.otherButton:hover {
+  cursor: pointer;
+}
+
+
+.endpointInput {
+  width: 160px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px;
+  border-radius: 3px;
+  padding-right: 6px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+

@@ -1,0 +1,23 @@
+/* .wrapper {
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.header {
+  display: flex;
+  background-color: rgb(52, 222, 235, .7);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+p {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+}

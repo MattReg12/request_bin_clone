@@ -1,0 +1,16 @@
+.body {
+  display: inline-block;
+  grid-template: auto auto 1fr auto / 100%;
+  grid-column: 1;
+  background-color: white;
+  width: 30%;
+  max-width: 500px;
+  height: 100%;
+  margin-right: 10px;
+  overflow: scroll;
+}
+
+.hr {
+  margin-bottom: 0px;
+  border-bottom: 0;
+}

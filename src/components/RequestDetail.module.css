@@ -1,0 +1,8 @@
+.main {
+  display: inline-block;
+  width: 68%;
+  height: 50%;
+  background-color: white;
+  position: absolute;
+  top: 10px
+}
