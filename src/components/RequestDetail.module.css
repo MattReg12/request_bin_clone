@@ -1,8 +1,77 @@
-.main {
+.wrapper {
   display: inline-block;
   width: 68%;
-  height: 50%;
+  /* height: 300px; */
   background-color: white;
   position: absolute;
-  top: 10px
+  top: 10px;
+  border-radius: 5px;
+  padding-left: 5px
+}
+
+.header {
+  border-bottom: 1px solid gray;
+  margin-left: -5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: .7rem;
+  color: gray;
+}
+
+.lineItem {
+  display: flex;
+  border-bottom: 1px solid gray;
+  margin-left: -5px;
+  padding-left: 10px;
+  margin-top: 0;
+  font-size: 1rem;
+  color: gray;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.lineItemQuery {
+  display: flex;
+  border-bottom: 1px solid gray;
+  margin-left: -5px;
+  padding-left: 10px;
+  margin-top: 0;
+  font-size: 1rem;
+  color: gray;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineItemName {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80px;
+  border-right: 1px solid black;
+  padding-right: 5px;
+  height: 40px;
+}
+
+.lineItemContent {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+
+.link {
+  margin-left: 5px;
+}
+
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  cursor: pointer;
 }
