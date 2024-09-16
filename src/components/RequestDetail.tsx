@@ -6,12 +6,11 @@ function RequestDetail() {
     <div className={styles.wrapper}>
       <p className={styles.header}>HTTP REQUEST</p>
       <div className={styles.lineItem}>
-        <div className={styles.lineItemName}>Details</div>
-        <div className={styles.lineItemContent}>SHAZAM
-        </div>
+        <p className={styles.lineItemName}>Details</p>
+        <p className={styles.lineItemContent}>SHAZAM</p>
       </div>
       <div className={styles.lineItem}>
-        <div className={styles.lineItemName}>Headers</div>
+        <p className={styles.lineItemName}>Headers</p>
         <div className={styles.lineItemContent}>
           <span className={styles.arrow}>▶</span>
           <a className={styles.link}>(375,000) headers</a>

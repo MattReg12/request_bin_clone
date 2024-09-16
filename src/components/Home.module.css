@@ -15,9 +15,28 @@
   margin-top: 100px;
 }
 
-p {
+.text {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 2rem;
   font-weight: bold;
 }
+
+.button {
+  font-size: 20px;
+  border-radius: 3px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  align-items: center;
+  border: none;
+  min-width: 160px;
+  /* margin-left: auto; */
+}
+
+.button:hover {
+  background-color: rgb(128, 128, 128, .5);
+  cursor: pointer;
+}
+

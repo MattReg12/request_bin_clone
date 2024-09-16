@@ -8,7 +8,6 @@ function RequestList() {
       <h2>Requests:</h2>
       <hr className={styles.hr}></hr>
       <RequestListItem />
-      <RequestListItem />
     </div>
   )
 }

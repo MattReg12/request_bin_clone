@@ -1,15 +1,19 @@
-import React from 'react'
 import styles from './Home.module.css'
-import HomeNewBinButton from './HomeNewBinButton';
-
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate('/bin')
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <p>Inspect webhooks and HTTP requests. Team 4 style</p>
+        <p className={styles.text}>Inspect webhooks and HTTP requests. Team 4 style</p>
       </div>
-      <HomeNewBinButton />
+      <button onClick={handleClick} className={styles.button}>Create Endpoint</button>
     </div>
   )
 }
