@@ -1,11 +1,14 @@
 import styles from './Home.module.css'
 import { useNavigate } from "react-router-dom";
+import endpointService from '../services/endpoints'
 
 function Home() {
   const navigate = useNavigate();
 
-  function handleClick() {
-    navigate('/bin')
+  async function handleClick() {
+    const endpoint = await endpointService.create_endpoint();
+    console.log({ endpoint: endpoint})
+    navigate('/bin/' + endpoint)
   }
 
   return (
