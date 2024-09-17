@@ -1,14 +1,25 @@
 import React from 'react'
 import styles from './RequestListItem.module.css'
+import { Request } from '../types/types'
 
-function RequestListItem() {
+interface RequestListItem {
+  request : Request
+}
+
+
+
+function RequestListItem({request}: RequestListItem) {
+  function handleClick() {
+    alert('bazinga')
+  }
+
+
   return (
-    <div className={styles.wrapper}>
+    <div onClick={handleClick} className={styles.wrapper}>
       <div className={styles.timestamp}>
-        <p className={styles.data}>12:55:365</p>
+        <p className={styles.data}>{request['received_at'].slice(11, 19)}</p>
       </div>
-      {/* <div className={styles.requestSummary}>tooie</div> */}
-      <p className={styles.path}>GET  / aasdasdaassssdsadasdsasdasdsasdh</p>
+      <p className={styles.path}>{`${request['method']}   ${request.path}`}</p>
     </div>
   )
 }

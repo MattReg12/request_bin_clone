@@ -9,6 +9,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/bin/:binId' element={<EndpointSummary />} />
         <Route path='/bin/:binId/:requestId' element={<EndpointSummary />} />
+        <Route path='*' element={<Home />} />
       </Routes>
     </Router>
   )

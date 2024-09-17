@@ -7,6 +7,8 @@ function Home() {
 
   async function handleClick() {
     const endpoint = await endpointService.create_endpoint();
+    const details = await endpointService.requests(endpoint as string);
+
     console.log({ endpoint: endpoint})
     navigate('/bin/' + endpoint)
   }

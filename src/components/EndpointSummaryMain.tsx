@@ -3,13 +3,15 @@ import styles from './EndpointSummaryMain.module.css'
 import RequestList from './RequestList';
 import RequestDetail from './RequestDetail';
 import EndpointDetail from './EndpointDetail';
+import { Request } from '../types/types'
 
 interface EndpointSummaryMainProps {
   requestId: string | undefined,
-  binId: string | undefined
+  binId: string | undefined,
+  requests: Request[]
 }
 
-function EndpointSummaryMain({ requestId, binId }: EndpointSummaryMainProps) {
+function EndpointSummaryMain({ requestId, binId, requests }: EndpointSummaryMainProps) {
   const [requestClicked, setRequestClicked] = React.useState(false)
 
   React.useEffect(() => {
@@ -21,7 +23,7 @@ function EndpointSummaryMain({ requestId, binId }: EndpointSummaryMainProps) {
 
   return (
     <div className={styles.wrapper}>
-      <RequestList />
+      <RequestList requests={requests}/>
       <EndpointDetail binId={binId} />
       {requestClicked && <RequestDetail requestId={requestId}/>}
     </div>

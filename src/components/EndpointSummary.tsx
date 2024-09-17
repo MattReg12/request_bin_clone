@@ -3,17 +3,28 @@ import EndpointSummaryHeader from './EndpointSummaryHeader';
 import EndpointSummarySubHeader from './EndpointSummarySubHeader';
 import EndpointSummaryMain from './EndpointSummaryMain';
 import { useNavigate, useParams } from 'react-router-dom';
+import endpointService from '../services/endpoints'
+import { Request } from '../types/types'
 
 function EndpointSummary() {
   const { binId, requestId } = useParams();
-  console.log({binId: binId, requestId: requestId})
+  const [requests, setRequests] = React.useState<Request[]>([])
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    const fetchRequests = async () => {
+      const requests: Request[] = await endpointService.requests(requestId as string)
+      setRequests(requests as Request[])
+    }
+
+    fetchRequests()
+  }, [])
 
   return (
     <>
       <EndpointSummaryHeader />
       <EndpointSummarySubHeader binId={binId}/>
-      <EndpointSummaryMain requestId={requestId} binId={binId}/>
+      <EndpointSummaryMain requests={requests} requestId={requestId} binId={binId}/>
     </>
   )
 }
