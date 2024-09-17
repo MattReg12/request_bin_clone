@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './EndpointSummarySubHeader.module.css'
 import { useNavigate } from 'react-router-dom'
+import endpointService from '../services/endpoints'
 
 interface EndpointSummarySubHeaderProp {
   binId : string | undefined
@@ -9,9 +10,11 @@ interface EndpointSummarySubHeaderProp {
 function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
   const navigate = useNavigate()
 
-  function handleClick() {
-    alert('bazinga')
-    navigate('/bin')
+  async function handleClickNew() {
+    const endpoint = await endpointService.create_endpoint();
+    console.log({ endpoint: endpoint})
+    navigate('/bin/' + endpoint)
+    // alert('new endpoint')
   }
 
   return (
@@ -21,7 +24,7 @@ function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
       <input className={styles.endpointInput} value={`https://${binId}.x.com`} readOnly></input>
       <div className={styles.otherButton}>copy
       </div>
-      <button onClick={handleClick} className={styles.otherButton}>new
+      <button onClick={handleClickNew} className={styles.otherButton}>new
       </button>
     </div>
   )
