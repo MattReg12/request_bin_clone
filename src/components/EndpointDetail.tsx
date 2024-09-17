@@ -1,7 +1,7 @@
 import styles from './EndpointDetails.module.css'
 
 interface EndpointProp {
-  binId: string
+  binId: string | undefined
 }
 
 function EndpointDetail({ binId }: EndpointProp) {

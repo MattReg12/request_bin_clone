@@ -6,7 +6,7 @@ import EndpointDetail from './EndpointDetail';
 
 interface EndpointSummaryMainProps {
   requestId: string | undefined,
-  binId: string
+  binId: string | undefined
 }
 
 function EndpointSummaryMain({ requestId, binId }: EndpointSummaryMainProps) {
@@ -15,6 +15,7 @@ function EndpointSummaryMain({ requestId, binId }: EndpointSummaryMainProps) {
   React.useEffect(() => {
     if (requestId) {
       setRequestClicked(true)
+      // axios request individual detail of request
     }
   }, [])
 
@@ -22,7 +23,7 @@ function EndpointSummaryMain({ requestId, binId }: EndpointSummaryMainProps) {
     <div className={styles.wrapper}>
       <RequestList />
       <EndpointDetail binId={binId} />
-      {requestClicked && <RequestDetail />}
+      {requestClicked && <RequestDetail requestId={requestId}/>}
     </div>
   )
 }

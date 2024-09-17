@@ -4,17 +4,16 @@ import EndpointSummarySubHeader from './EndpointSummarySubHeader';
 import EndpointSummaryMain from './EndpointSummaryMain';
 import { useNavigate, useParams } from 'react-router-dom';
 
-
 function EndpointSummary() {
-  const { binId } = useParams();
-
+  const { binId, requestId } = useParams();
+  console.log({binId: binId, requestId: requestId})
   const navigate = useNavigate();
 
   return (
     <>
       <EndpointSummaryHeader />
-      <EndpointSummarySubHeader />
-      <EndpointSummaryMain requestId={'hi'} binId={'5'}/>
+      <EndpointSummarySubHeader binId={binId}/>
+      <EndpointSummaryMain requestId={requestId} binId={binId}/>
     </>
   )
 }
