@@ -5,9 +5,9 @@ const create_endpoint = async () => {
     try {
     const response = await axios.post(baseUrl);
     // return response.data
-    return 'this message was successful';
+    return response;
   } catch (error) {
-    return '1234';
+    return 'endyl2yvntykt'; // some hashed val
   }
 }
 

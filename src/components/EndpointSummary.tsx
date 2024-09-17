@@ -7,23 +7,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 function EndpointSummary() {
   const { binId } = useParams();
-  alert(binId); /*  */
+
   const navigate = useNavigate();
-
-
-  React.useEffect(() => {
-    const sub = window.location.host.split('.')[0]
-
-    if (sub == 'poop') {
-      navigate('/')
-    }
-  }, [])
 
   return (
     <>
       <EndpointSummaryHeader />
       <EndpointSummarySubHeader />
-      <EndpointSummaryMain />
+      <EndpointSummaryMain requestId={'hi'} binId={'5'}/>
     </>
   )
 }
