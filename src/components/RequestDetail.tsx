@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './RequestDetail.module.css'
 import { Request } from '../types/types'
 import HeaderDetails from './HeaderDetails'
+import BodyDetails from './BodyDetails'
 
 interface RequestDetailProp {
   request: Request
@@ -17,8 +18,8 @@ function RequestDetail({ request }: RequestDetailProp) {
 
   React.useEffect(() => {
     const newHeaders = request.headers.split('\n')
-
     setHeaders(newHeaders)
+    setHeadersClicked(false)
   }, [request])
 
   return (
@@ -46,6 +47,8 @@ function RequestDetail({ request }: RequestDetailProp) {
           <a className={styles.link}>(3) query parameters</a>
         </div>
       </div>
+
+      {request.body && <BodyDetails request={request} />}
 
     </div>
   )

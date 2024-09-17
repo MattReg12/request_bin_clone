@@ -1,0 +1,46 @@
+.lineItemQuery {
+  display: flex;
+  border-bottom: 1px solid gray;
+  margin-left: -5px;
+  padding-left: 10px;
+  margin-top: 0;
+  font-size: 1rem;
+  color: gray;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineItemName {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80px;
+  padding-right: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.lineItemContentBody {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+  flex-grow: 1;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+
+.styledBox {
+  background-color: #1a1a2e; /* Dark background */
+  color: #a8ff60; /* Greenish text color */
+  padding: 10px; /* Space around the text */
+  font-size: 14px; /* Smaller font size */
+  border-radius: 10px; /* Rounded corners */
+  flex-grow: 1;
+  margin: 10px auto; /* Center the box horizontally */
+  margin-left: 0;
+  margin-right: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Optional: adds a subtle shadow */
+}

@@ -69,6 +69,17 @@
   border-left: 1px solid black;
 }
 
+.lineItemContentBody {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+  flex-grow: 1;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+
 .link {
   margin-left: 5px;
 }
