@@ -6,5 +6,15 @@
   position: absolute;
   top: 10px;
   border-radius: 5px;
-  padding-left: 5px
+  padding-left: 10px;
+  font-family: monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New;
+}
+
+.p {
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+.p2 {
+  margin-bottom: 3px;
 }
