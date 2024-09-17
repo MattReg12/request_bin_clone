@@ -1,0 +1,48 @@
+ul {
+  padding-left: 0;
+  list-style-type: none;
+  font-family: monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.li {
+  display: inline-block;
+  min-width: 300px;
+  font-weight: bold;
+  color: black;
+}
+
+.lineItemName {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80px;
+  padding-right: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.lineItemContent {
+  display: flex;
+  /* align-items: center; */
+  min-height: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+  flex-grow: 1;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+
+.lineItem {
+  display: flex;
+  border-bottom: 1px solid gray;
+  margin-left: -5px;
+  padding-left: 10px;
+  margin-top: 0;
+  font-size: 1rem;
+  color: gray;
+  justify-content: center;
+  align-items: center;
+}

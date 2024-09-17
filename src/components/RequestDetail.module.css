@@ -30,7 +30,6 @@
   margin-top: 0;
   font-size: 1rem;
   color: gray;
-  height: 40px;
   justify-content: center;
   align-items: center;
 }
@@ -49,18 +48,25 @@
 }
 
 .lineItemName {
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 80px;
-  border-right: 1px solid black;
   padding-right: 5px;
-  height: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .lineItemContent {
+  display: flex;
+  /* align-items: center; */
+  min-height: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
   flex-grow: 1;
   padding-left: 10px;
+  border-left: 1px solid black;
 }
 
 .link {
