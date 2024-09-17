@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './RequestListItem.module.css'
 import { Request } from '../types/types'
+import { useNavigate  } from 'react-router-dom'
 
 interface RequestListItem {
   request : Request
@@ -9,10 +10,12 @@ interface RequestListItem {
 
 
 function RequestListItem({request}: RequestListItem) {
-  function handleClick() {
-    alert('bazinga')
-  }
+  const navigate = useNavigate()
 
+  function handleClick() {
+    const bin = window.location.pathname.split('/')[2]
+    navigate(`/bin/${bin}/${request['id']}`)
+  }
 
   return (
     <div onClick={handleClick} className={styles.wrapper}>

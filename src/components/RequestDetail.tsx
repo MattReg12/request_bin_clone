@@ -1,17 +1,18 @@
 import React from 'react'
 import styles from './RequestDetail.module.css'
+import { Request } from '../types/types'
 
 interface RequestDetailProp {
-  requestId: string | undefined
+  request: Request
 }
 
-function RequestDetail({ requestId }: RequestDetailProp) {
+function RequestDetail({ request }: RequestDetailProp) {
   return (
     <div className={styles.wrapper}>
-      <p className={styles.header}>{`HTTP REQUEST:      ${requestId}`}</p>
+      <p className={styles.header}>{`HTTP REQUEST:      ${request.id}`}</p>
       <div className={styles.lineItem}>
         <p className={styles.lineItemName}>Details</p>
-        <p className={styles.lineItemContent}>SHAZAM</p>
+        <p className={styles.lineItemContent}>{`${request.method}   ${request.path}`}</p>
       </div>
       <div className={styles.lineItem}>
         <p className={styles.lineItemName}>Headers</p>

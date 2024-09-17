@@ -13,7 +13,7 @@ function RequestList( {requests} :RequestListProp ) {
       <h2>Requests:</h2>
       <hr className={styles.hr}></hr>
       {requests.map(request => {
-        return <RequestListItem key={Math.random()}request={request}/>
+        return <RequestListItem key={Math.random()} request={request}/>
       })}
     </div>
   )

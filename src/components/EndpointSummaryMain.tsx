@@ -13,19 +13,23 @@ interface EndpointSummaryMainProps {
 
 function EndpointSummaryMain({ requestId, binId, requests }: EndpointSummaryMainProps) {
   const [requestClicked, setRequestClicked] = React.useState(false)
+  const [currentRequest, setCurrentRequst] = React.useState<Request>({})
 
   React.useEffect(() => {
     if (requestId) {
-      setRequestClicked(true)
-      // axios request individual detail of request
+      const request = requests.find(request => request['id'] == requestId)
+      if (request) {
+        setRequestClicked(true)
+        setCurrentRequst(request)
+      }
     }
-  }, [])
+  }, [requestId])
 
   return (
     <div className={styles.wrapper}>
       <RequestList requests={requests}/>
       <EndpointDetail binId={binId} />
-      {requestClicked && <RequestDetail requestId={requestId}/>}
+      {requestClicked && <RequestDetail request={currentRequest}/>}
     </div>
   )
 }
