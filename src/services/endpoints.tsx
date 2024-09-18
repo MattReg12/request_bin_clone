@@ -7,6 +7,10 @@ const data = [
       "method": "GET",
       "path": "/",
       "headers": "Host: jWM187dSQ8xT.x.domain.com\nUser-Agent: PostmanRuntime/7.41.0\nAccept: */*",
+      "queryParams": {
+        color: 'green',
+        day: 'friday'
+      },
       "received_at": "2024-09-15T03:30:00.000Z",
       "body": "",
       "id": "boomboompow"

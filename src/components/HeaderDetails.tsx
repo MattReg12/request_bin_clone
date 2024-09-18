@@ -14,7 +14,7 @@ function HeaderDetails({ headers }: HeaderDetailsProp) {
         {headers.map(header => {
           let arr = header.split(': ')
           return (
-            <div>
+            <div key={Math.random()}>
               <li className={styles.li}>{arr[0]}</li>
               <span>{arr[1]}</span>
             </div>

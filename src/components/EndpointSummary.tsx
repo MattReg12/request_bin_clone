@@ -13,8 +13,8 @@ function EndpointSummary() {
 
   React.useEffect(() => {
     const fetchRequests = async () => {
-      const requests: Request[] = await endpointService.requests(requestId as string)
-      setRequests(requests as Request[])
+      const requests = await endpointService.requests(requestId as string)
+      setRequests(requests as any)
     }
 
     fetchRequests()

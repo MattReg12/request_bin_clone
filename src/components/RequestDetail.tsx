@@ -3,23 +3,38 @@ import styles from './RequestDetail.module.css'
 import { Request } from '../types/types'
 import HeaderDetails from './HeaderDetails'
 import BodyDetails from './BodyDetails'
+import ParamDetails from './ParamDetails'
 
 interface RequestDetailProp {
   request: Request
 }
 
+interface Param {
+  [key:string] : string;
+}
+
 function RequestDetail({ request }: RequestDetailProp) {
   const [headers, setHeaders] = React.useState<string[]>([]);
+  const [params, setParams] = React.useState<Param>({});
   const [headersClicked, setHeadersClicked] = React.useState(false)
+  const [paramsClicked, setParamsClicked] = React.useState(false)
 
   const handleHeadersClick = function() {
     setHeadersClicked(!headersClicked)
+  }
+
+  const handleParamsClick = function() {
+    setParamsClicked(!paramsClicked)
   }
 
   React.useEffect(() => {
     const newHeaders = request.headers.split('\n')
     setHeaders(newHeaders)
     setHeadersClicked(false)
+    setParamsClicked(false)
+
+    setParams(request.queryParams as any)
+
   }, [request])
 
   return (
@@ -40,13 +55,15 @@ function RequestDetail({ request }: RequestDetailProp) {
 
       {headersClicked && <HeaderDetails headers={headers}/>}
 
-      <div className={styles.lineItemQuery}>
+      {request.queryParams && <div className={styles.lineItemQuery}>
         <div className={styles.lineItemName}>Query</div>
-        <div className={styles.lineItemContent}>
-          <span className={styles.arrow}>▶</span>
-          <a className={styles.link}>(3) query parameters</a>
+        <div onClick={handleParamsClick} className={styles.lineItemContent}>
+          {paramsClicked ? <span className={styles.arrow}>▼</span> : <span className={styles.arrow}>▶</span>}
+          <a className={styles.link}>{`(${Object.keys(request.queryParams).length}) query parameters`}</a>
         </div>
-      </div>
+      </div>}
+
+      {paramsClicked && <ParamDetails params={params}/>}
 
       {request.body && <BodyDetails request={request} />}
 
@@ -54,4 +71,4 @@ function RequestDetail({ request }: RequestDetailProp) {
   )
 }
 
-export default RequestDetail
+export default RequestDetail;
