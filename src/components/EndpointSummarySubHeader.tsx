@@ -9,20 +9,26 @@ interface EndpointSummarySubHeaderProp {
 
 function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
   const navigate = useNavigate()
+  const endpointRef = React.useRef<HTMLInputElement | null>(null)
 
   async function handleClickNew() {
     const endpoint = await endpointService.create_endpoint();
-    console.log({ endpoint: endpoint})
-    navigate('/bin/' + endpoint)
-    // alert('new endpoint')
+    navigate(`/bin/${endpoint}`)
+  }
+
+  function handleCopyClick() {
+    if (endpointRef.current) {
+      const text = endpointRef.current.value
+      navigator.clipboard.writeText(text)
+    }
   }
 
   return (
     <div className={styles.main}>
       <div className={styles.defaultButton}>endpoint
       </div>
-      <input className={styles.endpointInput} value={`https://${binId}.gregchase.earth`} readOnly></input>
-      <div className={styles.otherButton}>copy
+      <input ref={endpointRef} className={styles.endpointInput} value={`https://${binId}.gregchase.earth`} readOnly></input>
+      <div onClick={handleCopyClick} className={styles.otherButton}>copy
       </div>
       <button onClick={handleClickNew} className={styles.otherButton}>new
       </button>

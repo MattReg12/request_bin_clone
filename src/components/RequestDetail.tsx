@@ -19,6 +19,16 @@ function RequestDetail({ request }: RequestDetailProp) {
   const [headersClicked, setHeadersClicked] = React.useState(false)
   const [paramsClicked, setParamsClicked] = React.useState(false)
 
+  function getColor(text: string) {
+    if (text == 'GET') {
+      return 'green'
+    } else if (text == 'DELETE') {
+      return 'red'
+    } else {
+      return 'blue'
+    }
+  }
+
   const handleHeadersClick = function() {
     setHeadersClicked(!headersClicked)
   }
@@ -42,7 +52,7 @@ function RequestDetail({ request }: RequestDetailProp) {
       <p className={styles.header}>{`HTTP REQUEST:      ${request.id}`}</p>
       <div className={styles.lineItem}>
         <p className={styles.lineItemName}>Details</p>
-        <p className={styles.lineItemContent}>{`${request.method}   ${request.path}`}</p>
+        <p className={styles.lineItemContent}><span className={styles.needSpace}style={{ color: getColor(request.method) }}>{request.method}</span>{request.path}</p>
       </div>
 
       <div className={styles.lineItem}>

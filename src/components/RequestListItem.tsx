@@ -20,7 +20,7 @@ function RequestListItem({request}: RequestListItem) {
   return (
     <div onClick={handleClick} className={styles.wrapper}>
       <div className={styles.timestamp}>
-        <p className={styles.data}>{request['received_at'].slice(11, 19)}</p>
+        <p className={styles.data}>{request['received_at'].slice(2,10) + ' ' + request['received_at'].slice(11, 19)}</p>
       </div>
       <p className={styles.path}>{`${request['method']}   ${request.path}`}</p>
     </div>

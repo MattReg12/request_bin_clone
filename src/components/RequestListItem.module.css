@@ -3,6 +3,7 @@
   height: 50px;
   min-width: 240px;
   position: relative;
+  overflow: hidden;
 }
 
 .wrapper:hover {
@@ -11,17 +12,20 @@
 }
 
 .timestamp {
-  width: 80px;
+  width: 150px;
   height: 100%;
   border-right: 1px solid black;
   color: gray;
   position: relative;
   display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .data {
   display: inline-block;
   position: absolute;
+  width: 80px;
 }
 
 .path {
