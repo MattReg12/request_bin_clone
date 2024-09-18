@@ -10,6 +10,7 @@ interface EndpointSummarySubHeaderProp {
 function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
   const navigate = useNavigate()
   const endpointRef = React.useRef<HTMLInputElement | null>(null)
+  const [winkVisible, setWinkVisible] = React.useState(false)
 
   async function handleClickNew() {
     const endpoint = await endpointService.create_endpoint();
@@ -21,6 +22,12 @@ function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
       const text = endpointRef.current.value
       navigator.clipboard.writeText(text)
     }
+
+    setWinkVisible(true)
+    setTimeout(() => {
+      setWinkVisible(false)
+    }, 1000)
+
   }
 
   return (
@@ -29,6 +36,7 @@ function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
       </div>
       <input ref={endpointRef} className={styles.endpointInput} value={`https://${binId}.gregchase.earth`} readOnly></input>
       <div onClick={handleCopyClick} className={styles.otherButton}>copy
+        <img className={winkVisible ? styles.winkShow : styles.wink}src='/src/assets/wink.png'></img>
       </div>
       <button onClick={handleClickNew} className={styles.otherButton}>new
       </button>

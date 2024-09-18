@@ -22,6 +22,7 @@
 }
 
 .otherButton {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +34,7 @@
   padding-left: 3px;
   border-radius: 3px;
   margin-left: 5px;
+
 }
 
 .otherButton:hover {
@@ -50,4 +52,25 @@
   border: 1px solid black;
   margin-right: 10px;
 }
+
+.wink {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  transition: opacity 0.5s;
+}
+
+.winkShow {
+  /* display: block; */
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  display: block;
+  opacity: 1;
+  width: inherit;
+  height: inherit;
+}
+
 
