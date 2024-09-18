@@ -35,14 +35,12 @@
   margin-left: 5px;
 }
 
-
 .otherButton:hover {
   cursor: pointer;
 }
 
-
 .endpointInput {
-  width: 160px;
+  width: 220px;
   height: 36px;
   align-items: center;
   justify-content: center;

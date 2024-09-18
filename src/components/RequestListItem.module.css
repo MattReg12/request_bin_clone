@@ -28,7 +28,7 @@
   display: inline-block;
   position: absolute;
   margin-left: 10px;
-  max-width: 100%;
+  max-width: 350px;
   max-height: 22px;
   white-space: nowrap;
   text-overflow: ellipsis;

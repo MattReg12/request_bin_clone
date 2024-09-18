@@ -21,7 +21,7 @@ function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
     <div className={styles.main}>
       <div className={styles.defaultButton}>endpoint
       </div>
-      <input className={styles.endpointInput} value={`https://${binId}.x.com`} readOnly></input>
+      <input className={styles.endpointInput} value={`https://${binId}.gregchase.earth`} readOnly></input>
       <div className={styles.otherButton}>copy
       </div>
       <button onClick={handleClickNew} className={styles.otherButton}>new

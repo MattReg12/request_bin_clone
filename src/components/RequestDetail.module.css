@@ -35,24 +35,12 @@
 }
 
 
-.lineItemQuery {
-  display: flex;
-  border-bottom: 1px solid gray;
-  margin-left: -5px;
-  padding-left: 10px;
-  margin-top: 0;
-  font-size: 1rem;
-  color: gray;
-  justify-content: center;
-  align-items: center;
-}
-
 .lineItemName {
   min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 80px;
+  min-width: 80px;
   padding-right: 5px;
   margin-top: 0;
   margin-bottom: 0;
@@ -67,6 +55,8 @@
   flex-grow: 1;
   padding-left: 10px;
   border-left: 1px solid black;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .lineItemContentBody {
@@ -91,4 +81,15 @@
 
 .arrow:hover {
   cursor: pointer;
+}
+.lineItemQuery {
+  display: flex;
+  border-bottom: 1px solid gray;
+  margin-left: -5px;
+  padding-left: 10px;
+  margin-top: 0;
+  font-size: 1rem;
+  color: gray;
+  justify-content: center;
+  align-items: center;
 }

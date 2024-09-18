@@ -8,7 +8,7 @@ function EndpointDetail({ binId }: EndpointProp) {
   return (
     <div className={styles.wrapper}>
       <p className={styles.p2}>Your endpoint is: </p>
-      <p className={styles.p}>{`https://${binId}.x.example.com`}</p>
+      <p className={styles.p}>{`https://${binId}.gregchase.earth`}</p>
     </div>
   )
 }
