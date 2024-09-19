@@ -4,6 +4,7 @@ import RequestList from './RequestList';
 import RequestDetail from './RequestDetail';
 import EndpointDetail from './EndpointDetail';
 import { Request } from '../types/types'
+import { removeBackslash } from './utils/helpers';
 
 interface EndpointSummaryMainProps {
   requestId: string | undefined,
@@ -16,8 +17,9 @@ function EndpointSummaryMain({ requestId, binId, requests }: EndpointSummaryMain
   const [currentRequest, setCurrentRequst] = React.useState<Request>({})
 
   React.useEffect(() => {
+    console.log('effect ran')
     if (requestId) {
-      const request = requests.find(request => request['id'] == requestId)
+      const request = requests.find(request => removeBackslash(request['id']) == requestId)
       if (request) {
         setRequestClicked(true)
         setCurrentRequst(request)

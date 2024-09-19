@@ -5,6 +5,7 @@ import EndpointSummaryMain from './EndpointSummaryMain';
 import { useNavigate, useParams } from 'react-router-dom';
 import endpointService from '../services/endpoints'
 import { Request } from '../types/types'
+import { io } from 'socket.io-client';
 
 
 function EndpointSummary() {
@@ -13,15 +14,14 @@ function EndpointSummary() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    const binIds = ['123', '456', '789']
-    if (!binIds.includes(binId as string)) {
-      console.log(binId)
-      alert('Bin does not exist');
-      navigate('/');
-    }
     const fetchRequests = async () => {
-      const requests = await endpointService.requests(requestId as string)
-      setRequests(requests as any)
+      try {
+        const requests: any = await endpointService.requests(binId as string)
+        setRequests(requests.data as any)
+      } catch {
+        alert('Bin does not exist');
+        navigate('/');
+      }
     }
 
     fetchRequests()

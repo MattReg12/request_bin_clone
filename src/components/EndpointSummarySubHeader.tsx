@@ -27,14 +27,13 @@ function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
     setTimeout(() => {
       setWinkVisible(false)
     }, 1000)
-
   }
 
   return (
     <div className={styles.main}>
       <div className={styles.defaultButton}>endpoint
       </div>
-      <input ref={endpointRef} className={styles.endpointInput} value={`https://${binId}.gregchase.earth`} readOnly></input>
+      <input ref={endpointRef} className={styles.endpointInput} value={`https://${binId}.jjjones.dev`} readOnly></input>
       <div onClick={handleCopyClick} className={styles.otherButton}>copy
         <img className={winkVisible ? styles.winkShow : styles.wink}src='/src/assets/wink.png'></img>
       </div>

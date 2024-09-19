@@ -38,12 +38,12 @@ function RequestDetail({ request }: RequestDetailProp) {
   }
 
   React.useEffect(() => {
-    const newHeaders = request.headers.split('\n')
-    setHeaders(newHeaders)
+    const newHeaders = request.headers
+    setHeaders(newHeaders as any)
     setHeadersClicked(false)
     setParamsClicked(false)
 
-    setParams(request.queryParams as any)
+    setParams(request.query_parameters as any)
 
   }, [request])
 
@@ -59,24 +59,23 @@ function RequestDetail({ request }: RequestDetailProp) {
         <p className={styles.lineItemName}>Headers</p>
         <div onClick={handleHeadersClick} className={styles.lineItemContent}>
           {headersClicked ? <span className={styles.arrow}>▼</span> : <span className={styles.arrow}>▶</span>}
-          <a className={styles.link}>{`(${headers.length}) headers`}</a>
+          <a className={styles.link}>{`(${Object.keys(request.headers).length}) headers`}</a>
         </div>
       </div>
 
       {headersClicked && <HeaderDetails headers={headers}/>}
 
-      {request.queryParams && <div className={styles.lineItemQuery}>
+      {Object.keys(request.query_parameters).length > 0 && <div className={styles.lineItemQuery}>
         <div className={styles.lineItemName}>Query</div>
         <div onClick={handleParamsClick} className={styles.lineItemContent}>
           {paramsClicked ? <span className={styles.arrow}>▼</span> : <span className={styles.arrow}>▶</span>}
-          <a className={styles.link}>{`(${Object.keys(request.queryParams).length}) query parameters`}</a>
+          <a className={styles.link}>{`(${Object.keys(request.query_parameters).length}) query parameters`}</a>
         </div>
       </div>}
 
       {paramsClicked && <ParamDetails params={params}/>}
 
       {request.body && <BodyDetails request={request} />}
-
     </div>
   )
 }

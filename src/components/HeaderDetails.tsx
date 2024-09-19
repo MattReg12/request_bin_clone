@@ -11,12 +11,11 @@ function HeaderDetails({ headers }: HeaderDetailsProp) {
     <p className={styles.lineItemName}></p>
     <div className={styles.lineItemContent}>
       <ul>
-        {headers.map(header => {
-          let arr = header.split(': ')
+        {Object.keys(headers).map(key => {
           return (
             <div key={Math.random()}>
-              <li className={styles.li}>{arr[0]}</li>
-              <span>{arr[1]}</span>
+              <li className={styles.li}>{key}</li>
+              <span>{headers[key as any]}</span>
             </div>
           )
         })}
