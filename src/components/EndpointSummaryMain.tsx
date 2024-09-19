@@ -24,8 +24,10 @@ function EndpointSummaryMain({ requestId, binId, requests }: EndpointSummaryMain
         setRequestClicked(true)
         setCurrentRequst(request)
       }
+    } else {
+      setRequestClicked(false)
     }
-  }, [requestId])
+  }, [requestId, binId])
 
   return (
     <div className={styles.wrapper}>

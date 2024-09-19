@@ -14,7 +14,7 @@ function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
 
   async function handleClickNew() {
     const endpoint = await endpointService.create_endpoint();
-    navigate(`/bin/${endpoint}`)
+    navigate(`/bin/${endpoint.endpoint}`)
   }
 
   function handleCopyClick() {
