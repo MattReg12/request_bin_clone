@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'https://localhost:3000/api'
+const baseUrl = '/api'
 
 const create_endpoint = async () => {
   try {
