@@ -25,7 +25,7 @@ function EndpointSummary() {
     }
 
     fetchRequests()
-  }, [])
+  }, [binId])
 
   return (
     <>
