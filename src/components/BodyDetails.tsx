@@ -6,7 +6,6 @@ interface RequestDetailProp {
 }
 
 function BodyDetails({ request }: RequestDetailProp) {
-  console.log(request)
   return (
     <div className={styles.lineItemQuery}>
       <div className={styles.lineItemName}>Body</div>

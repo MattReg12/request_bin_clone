@@ -15,7 +15,7 @@ function RequestList( {setRequests, requests} :RequestListProp ) {
   const { binId } = useParams()
 
   React.useEffect(() => {
-    const ws = new WebSocket(`ws://jjjones.dev/api/bin/${binId}`);
+    const ws = new WebSocket(`wss://jjjones.dev/api/bin/${binId}`);
 
     setSocket(ws);
 
