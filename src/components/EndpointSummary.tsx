@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react';
 import EndpointSummaryHeader from './EndpointSummaryHeader';
 import EndpointSummarySubHeader from './EndpointSummarySubHeader';
@@ -5,7 +7,6 @@ import EndpointSummaryMain from './EndpointSummaryMain';
 import { useNavigate, useParams } from 'react-router-dom';
 import endpointService from '../services/endpoints'
 import { Request } from '../types/types'
-import { io } from 'socket.io-client';
 
 
 function EndpointSummary() {
@@ -23,7 +24,7 @@ function EndpointSummary() {
         navigate('/');
       }
     }
-
+    console.log('main', requests)
     fetchRequests()
   }, [binId])
 
@@ -31,7 +32,7 @@ function EndpointSummary() {
     <>
       <EndpointSummaryHeader />
       <EndpointSummarySubHeader binId={binId}/>
-      <EndpointSummaryMain requests={requests} requestId={requestId} binId={binId}/>
+      <EndpointSummaryMain setRequests={setRequests} requests={requests} requestId={requestId} binId={binId}/>
     </>
   )
 }

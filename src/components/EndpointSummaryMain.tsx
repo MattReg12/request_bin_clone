@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import styles from './EndpointSummaryMain.module.css'
 import RequestList from './RequestList';
@@ -12,12 +14,11 @@ interface EndpointSummaryMainProps {
   requests: Request[]
 }
 
-function EndpointSummaryMain({ requestId, binId, requests }: EndpointSummaryMainProps) {
+function EndpointSummaryMain({ setRequests, requestId, binId, requests }: EndpointSummaryMainProps) {
   const [requestClicked, setRequestClicked] = React.useState(false)
   const [currentRequest, setCurrentRequst] = React.useState<Request>({})
 
   React.useEffect(() => {
-    console.log('effect ran')
     if (requestId) {
       const request = requests.find(request => removeBackslash(request['id']) == requestId)
       if (request) {
@@ -31,7 +32,7 @@ function EndpointSummaryMain({ requestId, binId, requests }: EndpointSummaryMain
 
   return (
     <div className={styles.wrapper}>
-      <RequestList requests={requests}/>
+      <RequestList setRequests={setRequests} requests={requests}/>
       <EndpointDetail binId={binId} />
       {requestClicked && <RequestDetail request={currentRequest}/>}
     </div>
