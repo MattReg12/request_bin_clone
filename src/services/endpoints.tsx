@@ -1,6 +1,18 @@
 import axios from 'axios'
 const baseUrl = '/api'
 
+const httpMethods = [
+  'post',
+  'put',
+  'delete',
+  'patch',
+];
+
+function getRandomElement(arr: string[]) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
+
 const create_endpoint = async () => {
   try {
     const response = await axios({
@@ -20,11 +32,25 @@ const requests = async (binId: string) => {
   try {
     const response = await axios.get(baseUrl + `/bin/${binId}`);
     return response;
-} catch (error) {
-    // alert('bin does not exist, sorry!')
-    // navigate('/')
+  } catch (error) {
     return
 }
 }
 
-export default { create_endpoint, requests };
+const sendRandomRequest = async function(body: string, endpoint: string) {
+  try {
+    const response = await axios({
+      method: getRandomElement(httpMethods),
+      url: 'https://' + endpoint + '.jjjones.dev',
+      data: body.replaceAll('\n', ' '),
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'
+      }
+    })
+  } catch (error) {
+    return {error: error}
+  }
+}
+
+export default { create_endpoint, requests, sendRandomRequest };

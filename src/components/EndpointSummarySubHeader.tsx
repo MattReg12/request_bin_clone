@@ -2,10 +2,13 @@ import React from 'react'
 import styles from './EndpointSummarySubHeader.module.css'
 import { useNavigate } from 'react-router-dom'
 import endpointService from '../services/endpoints'
+import getAsciiArt from '../services/openai'
 
 interface EndpointSummarySubHeaderProp {
   binId : string | undefined
 }
+
+
 
 function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
   const navigate = useNavigate()
@@ -14,6 +17,8 @@ function EndpointSummarySubHeader({ binId }: EndpointSummarySubHeaderProp ) {
 
   async function handleClickNew() {
     const endpoint = await endpointService.create_endpoint();
+    let body: any = await getAsciiArt()
+    const req = await endpointService.sendRandomRequest(body, endpoint.endpoint)
     navigate(`/bin/${endpoint.endpoint}`)
   }
 
